@@ -1,0 +1,21 @@
+version: 0.2
+     
+phases:
+  install:
+    runtime-versions:
+      JAVA: openjdk
+    commands:
+      - echo install phase
+  pre_build:
+    commands:
+      - echo prebuild phase
+  build:
+    commands:
+      - mvn clean package
+  post_build:
+    commands:
+      - echo postbuild phase
+
+artifacts:
+  files:
+    - target/AWS_Codepipeline_01-0.0.1-SNAPSHOT.jar
